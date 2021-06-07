@@ -5,11 +5,11 @@
 const prices = [7, 1, 5, 3, 6, 4];
 
 const stock = (prices) => {
-  let profitResutlArr = [];
+  let profitResutlArr = [0];
   for (let i = 0; i < prices.length; i++) {
     for (let j = i + 1; j < prices.length; j++) {
       let profit = prices[j] - prices[i];
-      profitResutlArr.push(profit);
+      profit > 0 && profitResutlArr.push(profit);
     }
   }
   return Math.max(...profitResutlArr);
